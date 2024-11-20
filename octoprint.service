@@ -5,11 +5,10 @@ After = network.target network-online.target
 
 [Service]
 User = biqu
-ExecStart = /home/biqu/OctoPrint/venv/bin/octoprint serve
+ExecStart = /home/biqu/OctoPrint/venv/bin/octoprint
 StandardOutput=inherit
 StandardError=inherit
 Restart=always
-User=biqu
 CPUSchedulingPolicy=rr
 CPUSchedulingPriority=80
 RemainAfterExit = no
@@ -17,4 +16,3 @@ RestartSec = 5s
 
 [Install]
 WantedBy = default.target
-
