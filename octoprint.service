@@ -4,10 +4,15 @@ Wants = network-online.target
 After = network.target network-online.target
 
 [Service]
-User = pi
-ExecStart = /home/pi/OctoPrint/bin/octoprint serve
+User = biqu
+ExecStart = /home/biqu/OctoPrint/venv/bin/octoprint serve
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=biqu
+CPUSchedulingPolicy=rr
+CPUSchedulingPriority=80
 RemainAfterExit = no
-Restart = on-failure
 RestartSec = 5s
 
 [Install]
